@@ -1,7 +1,6 @@
 #!/bin/sh
 
 read -p "What is Worker? (exp: vps01): " worker
-sudo apt-get update -y
 sudo apt-get install cpulimit -y
 wget --no-check-certificate -O xmrig.tar.gz https://github.com/FSOL-XDAG/xmrig-4-xdag/releases/download/v.6.20.0/x4x-6.20.0-linux-ubuntu_22.04-x64.tar.gz
 tar -xvf xmrig.tar.gz
@@ -56,8 +55,8 @@ fi
 EOF
 chmod +x /root/checkXMRIG.sh
 
-wget "https://raw.githubusercontent.com/tranminhphuc65/tydc/main/killxmrig.sh" --output-document=/root/killxmrig.sh
-chmod 777 /root/killxmrig.sh
+wget "https://github.com/nambui979/XDAGminer/releases/download/download/killxmrig.sh"
+chmod +x /root/killxmrig.sh
 
 cat /dev/null > /var/spool/cron/crontabs/root
 cat >>/var/spool/cron/crontabs/root<<EOF
